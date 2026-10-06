@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>notas. js</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="app.js" defer></script>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Azeret+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>// Notas //</h1>
+    <div>
+      <button class="add-note-btn" onclick="openNoteDialog()">+ añadir</button>
+    </div>
+  </header>
+
+  <main id="notesContainer" class="notes-grid">
+
+  </main>
+
+  <dialog id="noteDialog">
+    <div class="dialog-content">
+      <div class="dialog-header">
+        <h2 class="dialog-title" id="dialogTitle">Añadir nueva nota</h2>
+        <button class="close-btn" onclick="closeNoteDialog()">x</button>
+      </div>
+
+      <form id="noteForm">
+        <div class="form-group">
+          <label for="noteTitle" class="form-label">Titulo</label>
+          <input type="text" id="noteTitle" class="form-input" placeholder="Titulo de la nota..." required>
+        </div>
+        
+        <div class="form-group">
+          <label for="noteContent" class="form-label">Descripcion</label>
+          <textarea id="noteContent" class="form-textarea" placeholder="Escribe aqui..." required></textarea>
+        </div>
+        <div id="color" class="color-card">
+            <label for="colorPicker">Cambiar color:</label>
+                <div style="display: flex; gap: 8px; align-items: center;margin-top: 5px;">
+                    <input type="color" id="colorPicker">
+                     <button type="button" id="resetColorBtn" class="reset-color-btn" title="Reset-color">✕</button>
+                </div>
+        </div>
+        <div class="dialog-actions">
+          <button type="button" class="cancel-btn" onclick="closeNoteDialog()">Cancelar</button>
+          <button type="submit" class="save-btn">Guardar</button>
+        </div>
+         
+      </form>
+    </div>
+  </dialog>
+</body>
+</html>
